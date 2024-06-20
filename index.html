@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="box">
+            <div >
+                <p class="title">Random Password Generated</p>
+            </div>
+            <div class="inputbox">
+                <input class="input" type="text"  placeholder="">
+            </div>
+            <div class="sliderbox">
+                <p class="lo">Password Lenght </p>
+                <span id="slidervalue"></span>
+            </div>
+             <input type="range" id="lengthslider" min="4" max="20" value="8">
+
+
+
+
+
+            <div class="checkbox">
+                <input type="checkbox" class="inputcheckbox"  id="uppercase" >
+                <label for="uppercase">Include Uppercase letters (A-Z)</label>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" class="inputcheckbox" id="lowercase" >
+                <label for="lowercase">Include Lowercase letters (a-z)</label>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" class="inputcheckbox"  id="numbers" >
+                <label for="numbers">Include Numbers (0-9)</label>
+            </div>
+
+            <div class="checkbox">
+                <input type="checkbox" class="inputcheckbox" id="symbols" >
+                <label for="symbols">Include Symbols (!@#$%^&*)</label>
+          </div>
+
+            <div class="buttonbox">
+                <button id="generate">Generate Password</button>
+            </div>
+
+
+
+
+<script src="./index.js"></script>
+</body>
+</html>
