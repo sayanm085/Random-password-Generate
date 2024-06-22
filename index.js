@@ -1,42 +1,47 @@
-let lengthslider=document.querySelector("#lengthslider")
-let slidervalue=document.querySelector("#slidervalue")
+let lengthslider=document.querySelector("#lengthslider");
+let slidervalue=document.querySelector("#slidervalue");
 
 
-slidervalue.innerText=lengthslider.value
+slidervalue.textContent=lengthslider.value;
 
-lengthslider.addEventListener("input", ()=>{
-    slidervalue.innerText=lengthslider.value 
+lengthslider.addEventListener("input",()=>{
+  slidervalue.textContent=lengthslider.value;
 })
 
+let generate=document.querySelector("#generate");
+
+generate.addEventListener("click",()=>{
+    
+  let Length=lengthslider.value
 
 
+   let uppercase=document.querySelector("#uppercase").checked
+   let lowercase=document.querySelector("#uppercase").checked
+   let numbers=document.querySelector("#uppercase").checked
+   let symbols=document.querySelector("#uppercase").checked
 
-let generatebtn=document.querySelector("#generate")
+  let character="";
+  let String="";
 
-generatebtn.addEventListener("click",()=>{
-    let lenght=lengthslider.value
 
-    let uppercase=document.querySelector("#uppercase").checked
-    let lowercase=document.querySelector("#lowercase").checked
-    let numbers=document.querySelector("#numbers").checked
-    let symbols=document.querySelector("#symbols").checked
+  if(uppercase){
+    character+="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  }
+  if(lowercase){
+    character+="abcdefghijklmnopqrstuvwxyz";
+  }
+  if(numbers){
+    character+="0123456789";
+  }
+  if(symbols){
+    character+="!@#$%^&*()_+";
+  }
 
+  for(let i=0; i<Length;i++){
+     String+=character.charAt(Math.floor(Math.random()*character.length))
+  }
   
-    let cratorin=""
-    let password=""
-     
-    if(uppercase) cratorin+="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    if(lowercase) cratorin+="abcdefghijklmnopqrstuvwxyz"
-    if(numbers) cratorin+="0123456789"
-    if(symbols) cratorin+="!@#$%^&*()_+"
+   
+  document.querySelector(".input").value=String;
 
-    for(let i=0; i<lenght;i++){
-      password+=cratorin.charAt(Math.floor(Math.random()*cratorin.length))
-    }
-    
-
-    document.querySelector(".input").value=password
-    
 })
-
-
